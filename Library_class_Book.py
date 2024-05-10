@@ -34,12 +34,7 @@ class Book:
                     f"It will be recycled <3.")
                 self.status = "Recycled"
             else:
-                print(
-                    f"The condition of the book '{self.title}' by {self.author} is too damaged.\n"
-                    f"It will be recycled <3.")
-                self.status = "Recycled"
-
-            print(f"Book '{self.title}' by {self.author} was successfully returned.")
+                print(f"Book '{self.title}' by {self.author} was successfully returned.")
 
         else:
             print("This book is not currently checked out. Maybe you are at the wrong library?")
