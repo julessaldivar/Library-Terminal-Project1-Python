@@ -16,9 +16,8 @@ class Book:
         if self.status == "On Shelf":
             self.status = "Checked out"
             self.due_date = datetime.date.today() + (datetime.timedelta(days=14))
-            # self.condition()
-            print(
-                f"Book '{self.title}' by {self.author} has been successfully checked out, and is due back {self.due_date}")
+            self.condition -= 50
+            print(f"Book '{self.title}' by {self.author} has been successfully checked out, and is due back {self.due_date}")
         else:
             print(f"Sorry, {self.title} is already checked out.")
 
@@ -28,18 +27,15 @@ class Book:
             self.status = "On Shelf"
             # reverts return date to none
             self.due_date = None
-            if self.condition > 0:
-                self.condition -= 50
+            if self.condition <= 0:
                 print(
-                    f"The condition of the book '{self.title}' by {self.author} has been damaged to {self.condition}%.")
-                if self.condition <= 0:
-                    print(
-                        f"The condition of the book '{self.title}' by {self.author} is too damaged.\n"
-                        f" It will be recycled <3.")
-                    self.status = "Recycled"
+                    f"The condition of the book '{self.title}' by {self.author} is too damaged.\n"
+                    f"It will be recycled <3.")
+                self.status = "Recycled"
             else:
                 print(
-                    f"The condition of the book '{self.title}' by {self.author} is too damaged. It will be recycled <3.")
+                    f"The condition of the book '{self.title}' by {self.author} is too damaged.\n"
+                    f"It will be recycled <3.")
                 self.status = "Recycled"
 
             print(f"Book '{self.title}' by {self.author} was successfully returned.")
@@ -60,7 +56,7 @@ book_list = [
     Book("Little Women", "Louisa May Alcott"),
     Book("A Tale of Two Cities", "Charles Dickens"),
     Book("Crime and Punishment", "Fyodor Dostoyevsky"),
-    Book("Frankenstein, or, the Modern Prometheus", "Mary Shelley"),
+    Book("Frankenstein", "Mary Shelley"),
     Book("The Return of the King", "J.R.R. Tolkien"),
     Book("The Two Towers", "J.R.R. Tolkien")
 
