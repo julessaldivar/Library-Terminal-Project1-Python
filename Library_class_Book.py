@@ -4,7 +4,8 @@ import datetime
 
 # create book class with title, author, status , condition and due date if checked out
 class Book:
-    def __init__(self, title, author, status="On Shelf", condition=100, due_date=None):
+    def __init__(self, number, title, author, status="On Shelf", condition=100, due_date=None):
+        self.number = number
         self.title = title
         self.author = author
         self.status = status
@@ -46,18 +47,18 @@ class Book:
 
 # create list of books
 book_list = [
-    Book("The Great Gatsby", "F. Scott Fitzgerald"),
-    Book("Animal Farm", "George Orwell"),
-    Book("The Fellowship of the Ring", "J.R.R. Tolkien"),
-    Book("Pride and Prejudice", "Jane Austen"),
-    Book("Don Quixote", "Miguel de Cervantes"),
-    Book("Treasure Island", "Robert Louis Stevenson"),
-    Book("The Scarlet Letter", "Nathaniel Hawthorne"),
-    Book("Little Women", "Louisa May Alcott"),
-    Book("A Tale of Two Cities", "Charles Dickens"),
-    Book("Crime and Punishment", "Fyodor Dostoyevsky"),
-    Book("Frankenstein", "Mary Shelley"),
-    Book("The Return of the King", "J.R.R. Tolkien"),
-    Book("The Two Towers", "J.R.R. Tolkien")
+    Book("1", "The Great Gatsby", "F. Scott Fitzgerald"),
+    Book("2", "Animal Farm", "George Orwell"),
+    Book("3", "The Fellowship of the Ring", "J.R.R. Tolkien"),
+    Book("4", "Pride and Prejudice", "Jane Austen"),
+    Book("5", "Don Quixote", "Miguel de Cervantes"),
+    Book("6", "Treasure Island", "Robert Louis Stevenson"),
+    Book("7", "The Scarlet Letter", "Nathaniel Hawthorne"),
+    Book("8", "Little Women", "Louisa May Alcott"),
+    Book("9", "A Tale of Two Cities", "Charles Dickens"),
+    Book("10", "Crime and Punishment", "Fyodor Dostoyevsky"),
+    Book("11", "Frankenstein", "Mary Shelley"),
+    Book("12", "The Return of the King", "J.R.R. Tolkien"),
+    Book("13", "The Two Towers", "J.R.R. Tolkien")
 
 ]
