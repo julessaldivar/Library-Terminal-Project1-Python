@@ -1,5 +1,10 @@
 import datetime
-import library_functions
+from Library_class_Book import book_list
+2
+
+from library_functions import display_books
+from library_functions import search_by_author
+from library_functions import search_title
 
 print("""Hi, Welcome to GC Library!
 Please choose an option from the below list to begin:""")
@@ -13,9 +18,10 @@ while valid_action == 0:
     action= int(input(f'> '))
 
     if action == 1:  # Display all the books ###################################
-        print('Display all the books')
-        # display_books()
 
+        display_books(book_list)
+
+        # Check out a book
 
 
         # Staying in the library loop or not.
@@ -26,8 +32,7 @@ while valid_action == 0:
             break
 
     elif action == 2:  # Search for a book by author #############################
-        print('Search for a book by author')
-        # search_by_author()
+        search_by_author(book_list)
 
 
 
@@ -39,8 +44,7 @@ while valid_action == 0:
             break
 
     elif action == 3:   # Search for a book by title keyword #######################
-        print('Search for a book by title keyword')
-        # search_title()
+        search_title(book_list)
 
 
         # Staying in the library loop or not.
