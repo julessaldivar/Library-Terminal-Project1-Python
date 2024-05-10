@@ -1,10 +1,11 @@
 import datetime
 from Library_class_Book import book_list
-2
+
 
 from library_functions import display_books
 from library_functions import search_by_author
 from library_functions import search_title
+from library_functions import checkout
 
 print("""Hi, Welcome to GC Library!
 Please choose an option from the below list to begin:""")
@@ -21,8 +22,7 @@ while valid_action == 0:
 
         display_books(book_list)
 
-        # Check out a book
-
+        checkout(book_list)
 
         # Staying in the library loop or not.
         another = input(f'Would you like to complete another action (y/n)? ')
@@ -32,9 +32,10 @@ while valid_action == 0:
             break
 
     elif action == 2:  # Search for a book by author #############################
+
         search_by_author(book_list)
 
-
+        checkout(book_list)
 
         # Staying in the library loop or not.
         another = input(f'Would you like to complete another action (y/n)? ')
@@ -44,8 +45,10 @@ while valid_action == 0:
             break
 
     elif action == 3:   # Search for a book by title keyword #######################
+
         search_title(book_list)
 
+        checkout(book_list)
 
         # Staying in the library loop or not.
         another = input(f'Would you like to complete another action (y/n)? ')
