@@ -10,9 +10,16 @@ def checkout(list):
             if book.number == num:
                 this_one = list[int(num)-1]
                 this_one.check_out()
+        if int(num) > len(list) or int(num) < 0:
+            print(f"I'm sorry that book isn't in our library.")
 
-
-
+def return_a_book(list, num):
+    for book in list:
+        if book.number == num:
+            book.return_book()
+            return
+    else:
+        print("Book was not found in the library.")
 
 #Display the entire list of books. Format it nicely.
 def display_books(list):

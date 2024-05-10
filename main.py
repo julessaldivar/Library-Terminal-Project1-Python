@@ -6,6 +6,7 @@ from library_functions import display_books
 from library_functions import search_by_author
 from library_functions import search_title
 from library_functions import checkout
+from library_functions import return_a_book
 
 print("""Hi, Welcome to GC Library!
 Please choose an option from the below list to begin:""")
@@ -58,7 +59,10 @@ while valid_action == 0:
             break
 
     elif action == 4:   # Return a book ##############################################
-        print('Return a book')
+
+        num_return= input(f'What is the number of the book you would like to return? ')
+
+        return_a_book(book_list, num_return)
 
 
 
