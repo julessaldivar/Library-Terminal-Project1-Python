@@ -1,6 +1,7 @@
 # Here are all the functions required to run the library
 from prettytable import PrettyTable
-
+from Library_class_Book import Book
+from Library_class_Book import book_list
 
 def checkout(list):
     checkout_y_or_n = input('Would you like to checkout one of these books (y/n)? ')
@@ -21,7 +22,7 @@ def return_a_book(list, num):
     else:
         print("Book was not found in the library.")
 
-#Display the entire list of books. Format it nicely.
+# Display the entire list of books. Format it nicely.
 def display_books(list):
     display= PrettyTable(['Number' ,'Title', "Author", 'Status'])
     for book in list:
@@ -31,29 +32,56 @@ def display_books(list):
 # Search for a book by author.
 def search_by_author(list):
     print(f'We would be happy to help you search for a book!')
-    desired_author= str(input("Please enter the author's name: "))
-    print(f'We have the following books that may interest you:')
+    desired_author= input("Please enter the author's name: ")
     book_options = PrettyTable(['Number','Title', "Author",'Status'])
+    found_media = 0
+
     for book in list:
         author=book.author
         if author.find(desired_author) >= 0:
             book_options.add_row([book.number, book.title, book.author, book.status])
+            found_media += 1
         else:
             continue
-    print(book_options)
+
+    if found_media == 0:
+        print(f"I'm sorry we didn't find any media from your search.")
+    else:
+        print(f'We have the following books that may interest you:')
+        print(book_options)
+        checkout(book_list)
+
 
 
 
 # Search for a book by title keyword.
 def search_title(list):
     keyword=str(input('Please enter the keyword you would like to search: '))
-    print('Results are as follows:')
     keyword_results = PrettyTable(['Number','Title','Author', "Status"])
+    found_media = 0
+
     for book in list:
-        title=book.title
+        title = book.title
         if title.find(keyword) >= 0:
             keyword_results.add_row([book.number, title ,book.author, book.status])
-            # Try to print out something if no keywords are found
+            found_media += 1
         else:
             continue
-    print(keyword_results)
+
+    if found_media == 0:
+        print(f"I'm sorry we didn't find any media from your search.")
+    else:
+        print(f'We have the following books that may interest you:')
+        print(keyword_results)
+        checkout(book_list)
+
+
+def add_book(list):
+    print(f'Excellent, you would like to add a book to the library!')
+
+    index = str(len(list) + 1)
+    new_book_title =  input('What is the title of the new book? ')
+    new_book_author = input('What is the author of the new book? ')
+    new_book = Book(index, new_book_title, new_book_author)
+    list.append(new_book)
+    print(f"Great! You've added {new_book.title} by {new_book.author} to the library. We appreciate your donation.")
