@@ -11,6 +11,7 @@ class Media:
         self.condition = condition
         self.due_date = due_date
 
+    # methods check_out and return
     def check_out(self):
         if self.status == "On Shelf":
             self.status = "Checked Out"
@@ -46,7 +47,8 @@ class Book(Media):  # add author as new parameter
             self.due_date = datetime.date.today() + datetime.timedelta(weeks=2)
             self.condition -= 20
             print(
-                f"Book '{self.title}' by {self.author} has been successfully checked out, and is due back {self.due_date}")
+                f"Book '{self.title}' by {self.author} has been successfully checked out, "
+                f"and is due back {self.due_date}")
         else:
             print(f"Sorry, '{self.title}' is already checked out.")
 
@@ -77,7 +79,8 @@ class Movie(Media):  # add director as new parameter
             self.due_date = datetime.date.today() + datetime.timedelta(weeks=2)
             self.condition -= 20
             print(
-                f"Movie '{self.title}' by {self.director} has been successfully checked out, and is due back {self.due_date}")
+                f"Movie '{self.title}' by {self.director} has been successfully checked out, "
+                f"and is due back {self.due_date}")
         else:
             print(f"Sorry, '{self.title}' is already checked out.")
 
@@ -86,7 +89,8 @@ class Movie(Media):  # add director as new parameter
         if self.status == "Checked Out":
             if self.condition <= 0:
                 print(
-                    f"The condition of the movie '{self.title}' by {self.director} is too damaged. It will be recycled.")
+                    f"The condition of the movie '{self.title}' by {self.director} is too damaged. "
+                    f"It will be recycled.")
                 self.status = "Recycled"
             else:
                 self.status = "On Shelf"
