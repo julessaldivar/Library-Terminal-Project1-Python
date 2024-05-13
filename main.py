@@ -1,5 +1,5 @@
 import datetime
-from Library_class_Book import media_list
+from Library_class_Media import media_list
 
 from library_functions import display_books
 from library_functions import search_by_author
@@ -12,7 +12,7 @@ from library_functions import add_movie
 print("""Hi, Welcome to the Grand Circus Library!
 Please choose an option from the below list to begin:""")
 
-valid_action=0
+valid_action = 0
 while valid_action == 0:            # Create a loop to stay in while the user wants to interact with the library.
 
     print("""    1. Display all media
@@ -76,7 +76,7 @@ while valid_action == 0:            # Create a loop to stay in while the user wa
 
     elif action == 4:   # Return a book ##############################################
 
-        num_return= input(f'What is the number of the item you would like to return? ')
+        num_return = input(f'What is the number of the item you would like to return? ')
 
         return_an_item(media_list, num_return)
 
@@ -108,7 +108,7 @@ while valid_action == 0:            # Create a loop to stay in while the user wa
             else:
                 print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
-    elif action == 6:  # Adding a moive to the library ################################
+    elif action == 6:  # Adding a movie to the library ################################
 
         add_movie(media_list)
 
