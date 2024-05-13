@@ -31,33 +31,48 @@ while valid_action == 0:            # Create a loop to stay in while the user wa
         checkout(media_list)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     elif action == 2:  # Search for a book by author #############################
 
         search_by_author(media_list)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     elif action == 3:   # Search for a book by title keyword #######################
 
         search_title(media_list)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     elif action == 4:   # Return a book ##############################################
 
@@ -66,37 +81,52 @@ while valid_action == 0:            # Create a loop to stay in while the user wa
         return_an_item(media_list, num_return)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     elif action == 5:  # Adding a book to the library ################################
 
         add_book(media_list)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     elif action == 6:  # Adding a moive to the library ################################
 
         add_movie(media_list)
 
         # Staying in the library loop or not.
-        another = input(f'Would you like to complete another action (y/n)? ')
-        if another == 'y':
-            valid_action = 0
-        else:
-            valid_action = 1
+        while True:
+            another = input(f'Would you like to complete another action (y/n)? ')
+            if another == 'y':
+                valid_action = 0
+                break
+            elif another == 'n':
+                valid_action = 1
+                break
+            else:
+                print(f"I don't understand your prompt. Please enter 'y' or 'n'.")
 
     else:                   #
         valid_action = 0
-        print(f"I don't understand your prompt, please enter a number 1-5.")
+        print(f"I don't understand your prompt, please enter a number 1-6.")
 
 print("""
 Thanks for visiting Grand Circus Library! We look forward to seeing you again.""")

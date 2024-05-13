@@ -37,19 +37,19 @@ def display_books(list):
 # Search for a book by author. #############################################
 def search_by_author(list):
     print(f'We would be happy to help you search!')
-    desired_author_director= input("Please enter the author/director name: ")
+    desired_author_director= input("Please enter the author/director name: ").lower()
 
     media_options = PrettyTable(['Number','Title', "Book Author", "Movie Director",'Status'])
     found_media = 0
 
     for item in list:
         if isinstance(item, Book):
-            author=item.author
+            author=(item.author).lower()
             if author.find(desired_author_director) >= 0:
                 media_options.add_row([item.number, item.title, item.author, ' ', item.status])
                 found_media += 1
         elif isinstance(item, Movie):
-            director=item.director
+            director=item.director.lower()
             if director.find(desired_author_director) >= 0:
                 media_options.add_row([item.number, item.title, ' ' , item.director, item.status])
                 found_media += 1
@@ -68,17 +68,17 @@ def search_by_author(list):
 
 # Search for a book by title keyword. ###################################
 def search_title(list):
-    keyword=str(input('Please enter the keyword you would like to search: '))
+    keyword=str(input('Please enter the keyword you would like to search: ')).lower()
     keyword_results = PrettyTable(['Number','Title','Book Author', 'Movie Director', "Status"])
     found_media = 0
 
     for item in list:
-        title = item.title
+        title = (item.title).lower()
         if title.find(keyword) >= 0:
             if isinstance(item, Book):
-                keyword_results.add_row([item.number, title ,item.author, ' ', item.status])
+                keyword_results.add_row([item.number, item.title ,item.author, ' ', item.status])
             elif isinstance(item, Movie):
-                keyword_results.add_row([item.number, title, ' ',item.director, item.status])
+                keyword_results.add_row([item.number, item.title, ' ',item.director, item.status])
             found_media += 1
         else:
             continue
