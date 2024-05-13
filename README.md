@@ -1,7 +1,10 @@
 # Python-Project1
 **Authors**: Jules Saldivar and Audrey Warner
+
 **Instructor**: James Meredith
+
 **Institution**: Grand Circus Bootcamp
+
 Active Project Dates: 5/10/24 - 5/14/24 
 
 ## Summary
